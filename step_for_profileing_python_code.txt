@@ -1,0 +1,22 @@
+for profiling line by line of a function we use rkern/line_profiler
+install in system
+git clone https://github.com/rkern/line_profiler.git
+find line_profiler -name '*.pyx' -exec cython {} \;
+cd line_profiler
+pip install . --user
+to install in virtual env
+git clone https://github.com/rkern/line_profiler.git
+find line_profiler -name '*.pyx' -exec cython {} \;
+cd line_profiler
+pip install .
+
+Running env....
+write @profile above a function
+then run his command
+python line_profiler/kernprof.py -l -o outputfile -b -v script nameofaudio.wav
+
+
+after installation and add annotation @profile above the function ....
+run following command
+kernprof -l script.py
+python -m line_profiler script.py.lprof > outputfile.txt
